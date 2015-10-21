@@ -63,10 +63,22 @@ describe('Visual monitor testing', function() {
       .url(baseUrl)
       .webdrivercss(testName + '.homepage', {
         name: '1',
-        exclude: [],
-        remove: [],
-        hide: [],
-        screenWidth: selectedCaps == 'chrome' ? [640, 960, 1200] : undefined,
+        exclude:
+          [
+            // Crystallizing Your Customer Relationships
+            '.girl',
+            '.usual-white girl-block p',
+            // OroCRM Has Redefined Multichannel
+            '.usual-black .left img'
+          ],
+        hide:
+          [
+            // Crystallizing Your Customer Relationships
+            '.usual-white p',
+            // OroCRM Has Redefined Multichannel
+            '.usual-black .text'
+          ],
+        screenWidth: selectedCaps == 'chrome' ? [1200] : undefined,
       }, resultsCallback)
       .call(done);
   });
